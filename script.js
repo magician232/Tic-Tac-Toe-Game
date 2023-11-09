@@ -37,8 +37,11 @@ function checkWinner(){
 function handleClick(el){
     const id = Number(el.id);
     arr[id]=currentPlayer;
-    el.innerText = currentPlayer;    
-    checkWinner();
-    currentPlayer = currentPlayer=="X" ? "o" : "X";
+    if(el.innerText!="X" && el.innerText!="o"){
+      el.innerText = currentPlayer;    
+      checkWinner();
+      currentPlayer = currentPlayer=="X" ? "o" : "X";
+    }
+    
 
 }
